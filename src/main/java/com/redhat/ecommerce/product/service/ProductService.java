@@ -23,9 +23,9 @@ public class ProductService {
     public List<Product> getProducts() {
         LOG.info("get list of Products");
         return List.of(
-                new Product(4, "Product 4", 100_000.0, "Product " + 4, generateProductDescription(4)),
-                new Product(5, "Product 5", 50_000.0, "Product " + 5, generateProductDescription(5)),
-                new Product(6, "Product 6", 202_500.0, "Product " + 6, generateProductDescription(6))
+                new Product(4, "Product 4", 100_000.0, "Product Short Desc 4", generateProductDescription(4)),
+                new Product(5, "Product 5", 50_000.0, "Product Short Desc 5", generateProductDescription(5)),
+                new Product(6, "Product 6", 202_500.0, "Product Short Desc 6", generateProductDescription(6))
         );
     }
 
