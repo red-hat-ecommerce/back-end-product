@@ -99,12 +99,25 @@ mvn test
 
 The application can be containerized using the provided Dockerfile:
 
+For a regular JVM apps,
 ```bash
 # Build the application
 mvn clean package
 
 # Build the Docker image
-docker build -t redhat-ecommerce/product-service .
+docker build -t redhat-ecommerce/product-service -f Dockerfile.jvm .
+
+# Run the container
+docker run -p 8080:8080 redhat-ecommerce/product-service
+```
+
+For native apps,
+```bash
+# Build the application
+mvn clean package -Dnative
+
+# Build the Docker image
+docker build -t redhat-ecommerce/product-service -f Dockerfile.native-micro .
 
 # Run the container
 docker run -p 8080:8080 redhat-ecommerce/product-service
