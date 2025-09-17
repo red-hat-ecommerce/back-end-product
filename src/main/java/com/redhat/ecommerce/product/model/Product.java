@@ -1,5 +1,7 @@
 package com.redhat.ecommerce.product.model;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
 /**
  * <pre>
  *  com.redhat.ecommerce.product.model.Product
@@ -8,6 +10,7 @@ package com.redhat.ecommerce.product.model;
  * @author Muhammad Edwin < edwin at redhat dot com >
  * 16 Sep 2025 14:04
  */
+@RegisterForReflection
 public class Product {
     private Integer productId;
     private String productName;
