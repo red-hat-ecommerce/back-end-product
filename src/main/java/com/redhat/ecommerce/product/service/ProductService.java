@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
 /**
  * <pre>
  *  com.redhat.ecommerce.product.service.ProductService
@@ -15,6 +17,7 @@ import java.util.List;
  * @author Muhammad Edwin < edwin at redhat dot com >
  * 16 Sep 2025 14:05
  */
+@RegisterForReflection
 @ApplicationScoped
 public class ProductService {
 
