@@ -33,4 +33,19 @@ public class ApiTest {
                     .body("$", hasSize(3));
     }
 
+
+    @Test
+    @Order(2)
+    @DisplayName("This test is to check if api get specific product id is working as expected")
+    public void testGetProduct() {
+        given()
+                .log().all()
+                .when()
+                    .get("/api/product/4")
+                .then()
+                    .log().all()
+                    .statusCode(200)
+                    .body("productId", equalTo(4));
+    }
+
 }

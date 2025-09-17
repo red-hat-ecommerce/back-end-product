@@ -21,13 +21,22 @@ public class ProductRoute extends RouteBuilder {
         rest("/api/product")
                 .get("/")
                     .produces("application/json")
-                    .to("direct:get-products");
+                    .to("direct:get-products")
+                .get("/{id}")
+                    .produces("application/json")
+                    .to("direct:get-product-by-id");
 
         from("direct:get-products")
                 .routeId("get-products-api")
                     .log("calling get-products")
                     .bean(ProductService.class, "getProducts")
                         .marshal().json(JsonLibrary.Jackson);
+
+        from("direct:get-product-by-id")
+                .routeId("get-product-by-id-api")
+                .log("calling get-product-by-id")
+                .bean(ProductService.class, "getProduct(${header.id})")
+                .marshal().json(JsonLibrary.Jackson);
 
     }
 
